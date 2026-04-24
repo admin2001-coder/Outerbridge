@@ -2,7 +2,7 @@
 # docker build --no-cache -t  outerbridge .
 # Run image
 # docker run -d -p 3000:3000 outerbridge
-FROM node:lts
+FROM node:22
 
 WORKDIR /usr/src/packages
 
