@@ -23,7 +23,7 @@ Supported request modes:
 | Fail on Tencent `Response.Error` | Implemented as configurable boolean |
 
 I also included a usage guide in `docs/tencent-cloud-component.md`. Example input for CVM `DescribeInstances`:
-
+```json
 {\
   "endpoint": "cvm.tencentcloudapi.com",\
   "service": "cvm",\
@@ -36,5 +36,6 @@ I also included a usage guide in `docs/tencent-cloud-component.md`. Example inpu
     "Limit": 1\
   }\
 }
+```
 
 I validated the new Tencent Cloud node and credential with TypeScript transpilation and a targeted strict typecheck using local stubs. I could not run a full repository build with real dependencies in this environment because dependency installation did not complete here, so the final runtime test still needs to be done with real Tencent Cloud credentials and activated Tencent products. The downloaded project is complete with the code changes included.
