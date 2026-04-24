@@ -7,15 +7,14 @@ COPY packages/components/package.json ./packages/components/package.json
 COPY packages/ui/package.json ./packages/ui/package.json
 COPY packages/server/package.json ./packages/server/package.json
 
-# Install deps but don't fail
-RUN yarn --ignore-engines --ignore-optional || true
+# 🚨 DO NOT skip optional deps
+RUN yarn install --ignore-engines || true
 
-# Copy everything
 COPY . .
 
-# Ignore build errors
+# still ignore build failures
 RUN yarn build || true
 
 EXPOSE 3000
 
-CMD [ "yarn", "start" ]
+CMD ["yarn", "start"]
